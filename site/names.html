@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Model Name Decoder &amp; Update Cadence — How AI Learns</title>
+  <meta name="description" content="Decode any AI model name into four plain pieces — family, size, flavor, version — and learn the update cadence: what changes between releases and what re-seasons quietly.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">How AI Learns &middot; decoding the shelf</p>
+    <h1>Model Name Decoder</h1>
+    <p class="lede">A model name is a four-part code: <strong>family &middot;
+    size &middot; flavor &middot; version</strong>. Decode a fictional
+    example below, then keep the tables as your pocket reference.</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Site pages">
+    <a href="index.html">Home</a>
+    <a href="journey.html">The parlor game</a>
+    <a href="names.html">Name decoder</a>
+    <a href="glossary.html">Glossary</a>
+  </nav>
+
+  <main>
+    <section id="decoder">
+      <h2>Try the decoder</h2>
+      <p>All names below are fictional teaching aids &mdash; the puzzle
+      pieces, though, are what you'll meet on any real download page or
+      model picker.</p>
+
+      <div class="decoder-box">
+        <label for="decoder-form">Pick a model name:</label>
+        <select id="decoder-input">
+          <option value="checkers">Checkers-7B-Talk-v2</option>
+          <option value="checkers-base">Checkers-7B</option>
+          <option value="checkers-70">Checkers-70B-Talk-v2</option>
+          <option value="checkers-think">Checkers-7B-Talk-Think</option>
+          <option value="widget-mini">Widget-mini-4</option>
+        </select>
+        <button type="button" id="decoder-form">Decode it</button>
+        <div id="decoder-output" aria-live="polite">
+          <p class="hint-text">The four decoded pieces will appear here.</p>
+        </div>
+      </div>
+
+      <h3>What each piece means</h3>
+      <table>
+        <thead>
+          <tr><th>Piece</th><th>Plain meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Family</strong></td><td>Whose kitchen built it, with
+          whose training recipe. A personality label &mdash; not a quality
+          score.</td></tr>
+          <tr><td><strong>Size</strong> (7B)</td><td>Seven billion adjustable
+          settings (parameters). A size class: 1&ndash;3B phone-friendly,
+          4&ndash;9B everyday laptop, 10&ndash;40B strong machine, 70B+
+          serious hardware. B-numbers compare well only within one
+          family, and size is not quality.</td></tr>
+          <tr><td><strong>Flavor</strong></td><td>Which finishing school:
+          no suffix or &ldquo;Base&rdquo; means the raw, pre-school reader
+          (may ramble at a chat window); Talk/Chat/Instruct means
+          finished school; a Think/R-style variant works out answers on
+          paper first; an extra tag is a specialty stacked on top.</td></tr>
+          <tr><td><strong>Version</strong></td><td>Which vintage. A bump
+          means the whole schooling was re-run &mdash; months of work that
+          arrive as a new name, not a slowly improving same-model.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="cadence">
+      <h2>Update cadence: the two-season kitchen</h2>
+      <p>Model behavior changes on two schedules at once:</p>
+
+      <table>
+        <thead>
+          <tr><th>What changes</th><th>How often</th><th>What it means for you</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>New vintage</strong> (re-run training + coaching,
+            new name)</td>
+            <td>Roughly seasonal per family &mdash; a few months to a year
+            between flagships</td>
+            <td>A genuinely different model wearing a similar name. Skim
+            the release notes once per cycle; re-run your own little
+            trial drills after the big jumps.</td>
+          </tr>
+          <tr>
+            <td><strong>The kitchen, re-seasoned</strong> (system prompt,
+            reading tools, guardrails, serving settings)</td>
+            <td>Quietly, any week, with no announcement</td>
+            <td>Chats feel different while the model name stays put. This
+            is normal &mdash; the frozen vintage is frozen; the seasoning
+            program is not.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>The gentle protocol (five habits)</h3>
+      <ol>
+        <li>Write down your model's vintage when it matters:
+        &ldquo;Toy-v3-Talk, March.&rdquo;</li>
+        <li>Skim official release notes once per cycle &mdash; skip the
+        rumor mill.</li>
+        <li>Ask the model its training cutoff, then verify the answer
+        against a document before pinning anything to it.</li>
+        <li>Re-run two or three of your personal sanity questions after
+        a big vintage jump.</li>
+        <li>Don't chase minors. Sub-version drift is background noise
+        for everyday work.</li>
+      </ol>
+
+      <p class="quiet-note">For local models (downloaded onto your own
+      machine), there is no secret seasoning at all: the model never
+      changes until you download a new file &mdash; one reason local-AI
+      people know their vintage precisely. Your prompt library, meanwhile,
+      is the most durable thing you own: label good prompts with the
+      vintage they worked on, and they'll survive every change of cook
+      with minor adjustment.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built and maintained by <strong>Asdale Dynamics, LLC</strong>. MIT
+    licensed. Copyright (c) 2026 Asdale Dynamics, LLC</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

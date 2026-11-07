@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Parlor Game — How AI Learns</title>
+  <meta name="description" content="Play a toy version of next-word prediction yourself: how AI really writes answers, what the temperature dial does, how tuning and feedback work, and why models invent things.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">How AI Learns &middot; the parlor game</p>
+    <h1>Guess the Next Word</h1>
+    <p class="lede">Below is a <strong>toy version</strong> of the game
+    every AI is playing when it answers you. The toy has read only a
+    pinch of text about a small cafe. A real model plays the same game
+    with a feel for half the internet &mdash; but the game itself is
+    identical.</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Site pages">
+    <a href="index.html">Home</a>
+    <a href="journey.html">The parlor game</a>
+    <a href="names.html">Name decoder</a>
+    <a href="glossary.html">Glossary</a>
+  </nav>
+
+  <main>
+    <section id="game">
+      <h2>The toy cafe predictor</h2>
+      <p>Type a couple of cafe words (or click a starter), then watch the
+      toy model hold up its ranked menu of next-word candidates:</p>
+
+      <div class="game-controls">
+        <label for="nextword-form">Your words so far:</label>
+        <div class="game-row">
+          <input id="nextword-input" type="text"
+                 placeholder="try: fresh coffee" autocomplete="off">
+          <button type="button" id="nextword-form">Guess the next word</button>
+        </div>
+        <p class="starter-row">
+          Starters:
+          <button type="button" class="starter" data-start="fresh">fresh&hellip;</button>
+          <button type="button" class="starter" data-start="coffee">coffee&hellip;</button>
+          <button type="button" class="starter" data-start="morning">morning&hellip;</button>
+        </p>
+      </div>
+
+      <div id="nextword-candidates" class="candidates" aria-live="polite">
+        <p class="hint-text">The toy's menu will appear here. (This toy
+        only knows words from its tiny cafe cookbook &mdash; exactly like
+        a real model, only smaller: it can't guess what it never read.)</p>
+      </div>
+
+      <h3>Now add the seasoning dial</h3>
+      <div class="temp-box">
+        <label for="temp-slider">Sampling temperature:
+          <span id="temp-value">1.0</span>
+        </label>
+        <input id="temp-slider" type="range" min="0" max="2" step="0.1" value="1">
+        <p id="temp-output" class="hint-text">At 1.0 the toy picks along
+        the menu in its usual proportions. Slide it down for a starchy,
+        predictable kitchen helper; slide it up for a restless poet who
+        goes down the menu more willingly.</p>
+      </div>
+    </section>
+
+    <section id="tunefeedback">
+      <h2>Finishing school vs. the tasting panel</h2>
+      <p>The trained-from-scratch model knows <em>how the words go</em>
+      but not <em>the job</em>. Two coaching phases fix that:</p>
+      <div class="duo">
+        <div class="duo-card">
+          <h3>Phase 1 &mdash; Finishing school</h3>
+          <p><strong>What it is:</strong> thousands of ideal
+          conversations, written by professional drafters and reviewers,
+          used as worked examples.</p>
+          <p><strong>Result:</strong> the model learns to answer rather
+          than continue, to ask a clarifying question when needed, and
+          to decline gracefully. (This is the difference between a
+          &ldquo;base&rdquo; model and a &ldquo;Talk/Chat/Instruct&rdquo;
+          model.)</p>
+        </div>
+        <div class="duo-card">
+          <h3>Phase 2 &mdash; Tasting panel</h3>
+          <p><strong>What it is:</strong> humans compare two replies to
+          the same question and pick the better dish &mdash; thousands
+          of times.</p>
+          <p><strong>Result:</strong> taste. Concise over padded, warm
+          over snide, &ldquo;I'm not certain&rdquo; said once instead of
+          hedging every clause. (In tech press, this starts with &ldquo;RL&hellip;&rdquo;)</p>
+        </div>
+      </div>
+      <p class="quiet-note">Your thumbs-up and thumbs-down are a small
+      stream of the same dish signal &mdash; fed to the <em>next</em>
+      cohort of training, not back into the model you're chatting with
+      tonight. The model you're talking to is frozen; the next vintage
+      is months away.</p>
+    </section>
+
+    <section id="invents">
+      <h2>Why it invents things &mdash; see it happen</h2>
+      <p>Below are slots where truth is genuinely hard to guess from a
+      feel for text. Flip each card to see what the guessing game
+      produces when nobody can be certain:</p>
+
+      <div class="flip-grid">
+        <div class="flip-card" tabindex="0">
+          <button type="button" class="flip-btn">
+            <span class="flip-face flip-front">
+              <strong>&ldquo;List three studies about coffee and achievement&rdquo;</strong><br>
+              <em>Tap to reveal what the game would produce&hellip;</em>
+            </span>
+            <span class="flip-face flip-back">
+              <strong>Three beautifully formatted citations.</strong><br>
+              Two of the three authors, years, and titles are plausible &mdash;
+              and not real. The game fills citation slots with
+              citation-shaped words. Always check the source exists.
+            </span>
+          </button>
+        </div>
+        <div class="flip-card" tabindex="0">
+          <button type="button" class="flip-btn">
+            <span class="flip-face flip-front">
+              <strong>&ldquo;What's the phone number for the bakery on
+              Maple?&rdquo;</strong><br>
+              <em>Tap to reveal&hellip;</em>
+            </span>
+            <span class="flip-face flip-back">
+              <strong>A ten-digit number, said with total confidence.</strong><br>
+              It has the exact shape of a phone number. The game cannot
+              leave the slot empty &mdash; and this slot was empty in the
+              baking. Ask for a source and check the digits yourself.
+            </span>
+          </button>
+        </div>
+        <div class="flip-card" tabindex="0">
+          <button type="button" class="flip-btn">
+            <span class="flip-face flip-front">
+              <strong>&ldquo;Quote the study's conclusion exactly.&rdquo;</strong><br>
+              <em>Tap to reveal&hellip;</em>
+            </span>
+            <span class="flip-face flip-back">
+              <strong>A fluent quote that isn't one.</strong><br>
+              Its tone matches how study conclusions sound, because the
+              tone training and the truth training ran separately. Asking
+              for exact quotes turns most inventions into confessions.
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <h3>The six habits</h3>
+      <ol>
+        <li><strong>Match the tool to the stakes:</strong> fluency jobs
+        (drafting, rewording, brainstorming) are safe; fact jobs
+        (citations, prices, dates, medical specifics) need checking.</li>
+        <li><strong>Ask for sources &mdash; then actually check them.</strong></li>
+        <li><strong>Re-ask in a fresh chat:</strong> two wildly different
+        answers means one is fictitious.</li>
+        <li><strong>Have it quote exactly</strong> rather than paraphrase.</li>
+        <li><strong>Ask &ldquo;what would make this wrong?&rdquo;</strong> &mdash;
+        doubts surface quickly.</li>
+        <li><strong>For health, money, or law:</strong> a trusted human
+        professional decides. Education, never advice.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built and maintained by <strong>Asdale Dynamics, LLC</strong>. MIT
+    licensed. Copyright (c) 2026 Asdale Dynamics, LLC</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How AI Learns — what happens before your AI answers, in plain English</title>
+  <meta name="description" content="A gentle, kitchen-table explanation of how AI actually learns: training on text, next-word prediction, tuning, human feedback, why models invent things, plus a model-name decoder and update-cadence guide.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">Asdale Dynamics, LLC &middot; plain-English AI education</p>
+    <h1>How AI Learns</h1>
+    <p class="lede">What actually happens before your AI answers &mdash; the
+    reading, the guessing game, the finishing school, the taste testers,
+    and the honest story behind the confident nonsense. Told like a
+    friend would, with zero math.</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Site pages">
+    <a href="index.html">Home</a>
+    <a href="journey.html">The parlor game</a>
+    <a href="names.html">Name decoder</a>
+    <a href="glossary.html">Glossary</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>The one idea this whole guide rests on</h2>
+      <blockquote><p>An answer from an AI chat is written
+      <strong>next word at a time, each word a guess</strong> &mdash; by a
+      well-read, well-schooled guesser that froze into its present self
+      months before you said hello.</p></blockquote>
+      <p>Every part of the &ldquo;is it magic?&rdquo; conversation becomes
+      calmer once you hold that one sentence. Training built the guesser.
+      Guessing built your answer. Coaching built its manners. The
+      guessing game explains the occasional confident nonsense.</p>
+    </section>
+
+    <section>
+      <h2>The two clocks</h2>
+      <p>The most useful mental picture in all of AI education, borrowed
+      from the restaurant world:</p>
+      <ul>
+        <li><strong>The years clock</strong> &mdash; training and tuning.
+        Months of reading and coaching, then the model is frozen into a
+        release. Back when it happened, forever ago.</li>
+        <li><strong>The seconds clock</strong> &mdash; inference. Tonight's
+        service: guess, place, re-read, guess. Every answer you've ever
+        received was built this fast, word by word.</li>
+      </ul>
+      <p>Thumbs-up buttons and long chats belong to the seconds clock.
+      They do not enroll the model in night school. When the model
+      genuinely changes, it's a new vintage &mdash; and that took
+      months.</p>
+    </section>
+
+    <section>
+      <h2>The journey, step by step</h2>
+      <ul class="chapter-list">
+        <li><a href="journey.html"><strong>Next-word prediction</strong></a> &mdash;
+            the parlor game behind every answer, with a toy version
+            you can play right now (temperature dial included).</li>
+        <li><a href="journey.html#tunefeedback"><strong>Tuning &amp; feedback</strong></a> &mdash;
+            finishing school versus the tasting panel, and why your
+            thumbs-down can't retrain tonight's model.</li>
+        <li><a href="journey.html#invents"><strong>Why models invent things</strong></a> &mdash;
+            fill-the-blank can't skip a slot &mdash; six habits that
+            keep the fabrications on the table where you can see them.</li>
+        <li><a href="names.html"><strong>Model name decoder</strong></a> &mdash;
+            family, size, flavor, version: four puzzle pieces, and a
+            table you can keep.</li>
+        <li><a href="names.html#cadence"><strong>Update cadence</strong></a> &mdash;
+            how often the shelf changes, what re-seasons behind your
+            back, and the gentle way to keep up.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What this is, and what it isn't</h2>
+      <p>This project teaches <em>how the machine works</em>. It's part
+      of a small family of beginner-first guides, each with its own job:</p>
+      <ul>
+        <li><strong>Word definitions?</strong> That's <em>AI Glossary
+        Pocketbook</em> &mdash; a pocket dictionary, not a story.</li>
+        <li><strong>Judging quality &amp; scores?</strong> That's <em>AI
+        Benchmarks Explained</em> &mdash; leaderboards read honestly.</li>
+        <li><strong>How learning itself works?</strong> You're here &mdash;
+        the journey from raw text to the answer on your screen.</li>
+      </ul>
+      <p>It's education only &mdash; never medical, legal, or financial
+      advice &mdash; and it never tells you which model to buy. It wants
+      you to understand the machine, then decide for yourself.</p>
+    </section>
+
+    <section class="quiet-note">
+      <h2>The full manual</h2>
+      <p>This website is the friendly quick tour. The complete manual
+      lives in the <code>docs/</code> folder of this project &mdash;
+      nine chapters with more analogies, more worked examples, and the
+      whole glossary. Site and manual are fully local: no tracking, no
+      external fonts, no network calls, ever.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built and maintained by <strong>Asdale Dynamics, LLC</strong> &mdash;
+    the company behind Registered Nurse turned AI author Dylan Asdale,
+    his book <em>The Massive AI Manual</em>, and the hub site
+    <code>dylanasdale.github.io</code>.</p>
+    <p>MIT licensed. Copyright (c) 2026 Asdale Dynamics, LLC</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

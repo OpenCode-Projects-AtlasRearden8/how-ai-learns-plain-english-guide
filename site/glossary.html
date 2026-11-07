@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glossary — How AI Learns</title>
+  <meta name="description" content="Plain-English definitions of the words used in explaining how AI learns: training, inference, parameters, temperature, RLHF, hallucination, base vs. instruct models, vintages.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">How AI Learns &middot; soft glossary</p>
+    <h1>Plain-English Glossary</h1>
+    <p class="lede">Every term this guide leans on, defined the way a
+    friend would define it. Type to filter; every definition stays
+    calm and short.</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Site pages">
+    <a href="index.html">Home</a>
+    <a href="journey.html">The parlor game</a>
+    <a href="names.html">Name decoder</a>
+    <a href="glossary.html">Glossary</a>
+  </nav>
+
+  <main>
+    <section>
+      <label for="glossary-search">Filter terms</label>
+      <input id="glossary-search" type="search"
+             placeholder="Try: temperature, hallucination, vintage&hellip;"
+             autocomplete="off">
+      <p id="no-results" class="empty-note hidden">No matching term &mdash;
+      that's fine; try fewer letters.</p>
+
+      <dl class="glossary" id="glossary-list">
+        <div id="attention">
+          <dt>Attention</dt>
+          <dd>The reading step before each guess: the model re-reads the
+          whole conversation and weighs which parts matter right now.
+          Like a good host glancing across the room before answering
+          you. Long chats can leave old details faint.</dd>
+        </div>
+        <div id="base-model">
+          <dt>Base model</dt>
+          <dd>The raw, pre–finishing-school model. Brilliant at
+          continuing text, unreliable at answering you. A plain name
+          with no &ldquo;Talk/Chat/Instruct&rdquo; suffix usually means
+          this.</dd>
+        </div>
+        <div id="benchmark">
+          <dt>Benchmark</dt>
+          <dd>A fixed exam with known answers used to score models. A
+          measurement, not a promise. (The companion project
+          <em>AI Benchmarks Explained</em> covers reading those scores
+          honestly.)</dd>
+        </div>
+        <div id="chat-model">
+          <dt>Chat / instruct model</dt>
+          <dd>The model after finishing school: answers, clarifies,
+          declines gracefully. This is what every chat service serves
+          and what you almost always want for everyday use.</dd>
+        </div>
+        <div id="cutoff-date">
+          <dt>Cutoff date</dt>
+          <dd>The last date of text the model trained on &mdash; the
+          back page of its library. Everything after it is unknown to
+          the model unless it's given a reading tool.</dd>
+        </div>
+        <div id="fine-tune">
+          <dt>Fine-tune</dt>
+          <dd>An extra, narrower round of finishing school taught on top
+          of a finished model &mdash; a specialty stacked on a standard
+          base. Shows up in names as an extra tag.</dd>
+        </div>
+        <div id="hallucination">
+          <dt>Hallucination</dt>
+          <dd>A confident, well-formed answer for a fact the model never
+          held: the guess-the-next-word game filling an empty slot with
+          a plausible invention. A property of the game, not a lie &mdash;
+          and not fully patchable.</dd>
+        </div>
+        <div id="inference">
+          <dt>Inference</dt>
+          <dd>The seconds clock: the model answering, guess by guess,
+          after its training clock has stopped. No new learning sticks
+          to the model during inference.</dd>
+        </div>
+        <div id="local-model">
+          <dt>Local model</dt>
+          <dd>A model running on your own computer (e.g., through
+          Ollama). It never quietly re-seasons itself; updates arrive
+          as new downloads, which is why local users know their vintage
+          precisely.</dd>
+        </div>
+        <div id="parameter">
+          <dt>Parameter</dt>
+          <dd>One adjustable setting inside the model &mdash; a &ldquo;dial&rdquo;
+          that training nudged a hair at a time until it held part of
+          the model's feel for language. There are billions.</dd>
+        </div>
+        <div id="pretraining">
+          <dt>Pretraining</dt>
+          <dd>The reading phase (chapter one-and-a-half of every model's
+          life): billions of guess-the-next-word rounds across a giant
+          library.</dd>
+        </div>
+        <div id="prompt">
+          <dt>Prompt</dt>
+          <dd>The words you send. Your most durable tool: label a good
+          one with the vintage it worked on, and it survives every
+          model change with minor adjustment.</dd>
+        </div>
+        <div id="release">
+          <dt>Release</dt>
+          <dd>A trained model frozen into a finished, named version
+          &mdash; the years clock, boxed and labeled for the shelf.</dd>
+        </div>
+        <div id="rlhf">
+          <dt>RLHF (human feedback)</dt>
+          <dd>The tasting panel: humans compare two replies and pick the
+          better dish, and thousands of verdicts nudge the model's
+          taste. Your thumbs-up is a tiny stream of the same signal,
+          aimed at the next vintage.</dd>
+        </div>
+        <div id="system-prompt">
+          <dt>System prompt</dt>
+          <dd>The hidden instructions that set a chat service's tone and
+          rules. Part of the kitchen, not the cook &mdash; adjustable by
+          the provider any week.</dd>
+        </div>
+        <div id="temperature">
+          <dt>Temperature</dt>
+          <dd>The seasoning dial for word-choice adventure: low means
+          nearly the top of the menu (starchy, predictable, good for
+          facts); high means happily down-menu (lively, risky, good for
+          poems).</dd>
+        </div>
+        <div id="token">
+          <dt>Token</dt>
+          <dd>A word-chunk. Models read and write in tokens, which is
+          why a model told &ldquo;say a ten-letter word&rdquo; counts
+          clumsily &mdash; tokens aren't letters.</dd>
+        </div>
+        <div id="training">
+          <dt>Training</dt>
+          <dd>The years clock: billions of guess-the-next-word rounds
+          across a giant library of text, each miss nudging every
+          parameter a hair.</dd>
+        </div>
+        <div id="vintage">
+          <dt>Version / vintage</dt>
+          <dd>Which edition of the recipe you're talking to. A version
+          bump means the entire schooling &mdash; reading, finishing
+          school, tasting panel &mdash; was re-run over months, and the
+          shelf gets a differently named jar.</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built and maintained by <strong>Asdale Dynamics, LLC</strong>. MIT
+    licensed. Copyright (c) 2026 Asdale Dynamics, LLC</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
